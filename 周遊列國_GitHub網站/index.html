@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>遊戲｜周遊列國｜World Check-in</title>
+<meta name="description" content="分區聚會上半場「周遊列國」即時棋盤：20 國、3 隊、限時打卡佔領。">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="assets/site.css?v=20261111180000">
+<link rel="stylesheet" href="assets/game.css?v=20261111180000">
+</head>
+<body data-wide="1">
+<main class="wrap wide">
+  <header class="page-head">
+    <p class="crumb">分區聚會 / 上半場</p>
+    <h1>周遊列國</h1>
+    <p class="lede" id="lede">載入中</p>
+  </header>
+
+  <div class="stack">
+  <section>
+    <div class="sec-head"><h2>動態</h2></div>
+    <div class="feed" id="feed"><div class="ev first"><span class="dot"></span><span class="msg">載入中</span></div></div>
+  </section>
+
+  <div class="play">
+    <section>
+      <div class="sec-head"><h2>棋盤</h2></div>
+      <p class="starttag"><b>順時針</b>｜各隊從 Taiwan、Turkey、Spain 出發</p>
+      <div class="board" id="board"></div>
+      <section id="reveal-sec" hidden style="margin-top:48px">
+        <div class="sec-head"><h2>食材揭曉</h2></div>
+        <div id="reveal"></div>
+      </section>
+    </section>
+    <aside class="side">
+      <section id="admin-sec" hidden><div id="adminBox"></div></section>
+      <section>
+        <div class="sec-head"><h2>隊伍</h2></div>
+        <div id="teams" style="display:grid;gap:32px"><div id="tc0"></div><div id="tc1"></div><div id="tc2"></div></div>
+      </section>
+    </aside>
+  </div>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><img id="modalImg" alt=""><div id="modalCap"></div></div>
+<script src="assets/config.js?v=20261111180000"></script>
+<script src="assets/site.js?v=20261111180000"></script>
+<script src="assets/game.js?v=20261111180000"></script>
+</body>
+</html>
