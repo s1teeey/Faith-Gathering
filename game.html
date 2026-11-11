@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>遊戲｜Faith 區｜分區聚會</title>
+<meta name="description" content="11 月分區聚會上半場「周遊列國」即時棋盤：20 國、3 隊、限時打卡佔領。">
+<link rel="stylesheet" href="site.css?v=20261112000000">
+<link rel="stylesheet" href="game.css?v=20261112000000">
+</head>
+<body data-page="game">
+<div class="page">
+  <main class="main">
+    <p class="eyebrow">11 月｜上半場</p>
+    <h1>周遊列國</h1>
+    <p class="lede" id="lede">載入中</p>
+
+    <section class="sec" style="margin-top:40px">
+      <div class="kick">動態</div>
+      <div class="feed" id="feed"><div class="ev first"><span class="dot"></span><span class="msg">載入中</span></div></div>
+    </section>
+
+    <section class="sec" style="margin-top:44px">
+      <div class="kick">棋盤</div>
+      <p class="starttag"><b>順時針</b>｜各隊從 Taiwan、Turkey、Spain 出發</p>
+      <div class="board" id="board"></div>
+    </section>
+
+    <section class="sec" id="reveal-sec" hidden>
+      <div class="kick">結算</div>
+      <h2>食材揭曉</h2>
+      <div id="reveal" style="margin-top:12px"></div>
+    </section>
+  </main>
+
+  <aside class="panel long">
+    <div class="stick">
+      <section id="admin-sec" hidden><div id="adminBox"></div></section>
+      <section>
+        <div class="p-title">隊伍</div>
+        <div id="teams"><div id="tc0"></div><div id="tc1"></div><div id="tc2"></div></div>
+      </section>
+    </div>
+  </aside>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><img id="modalImg" alt=""><div id="modalCap"></div></div>
+<script src="config.js?v=20261112000000"></script>
+<script src="site.js?v=20261112000000"></script>
+<script src="game.js?v=20261112000000"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+/* 首頁：以月份為主的目錄（沿用簡報章節頁的大號紫色編號） */
+.months{margin-top:44px;border-top:2px solid var(--rule)}
+.mrow{display:grid;grid-template-columns:132px minmax(0,1fr) auto;gap:24px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.mrow:hover{background:var(--bg-soft)}
+.mrow:hover .go{color:var(--accent)}
+.mrow .no{font-size:76px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.03em;padding-left:6px}
+.mrow h2{font-size:26px;margin-bottom:4px}
+.mrow .sub{color:var(--muted);font-size:15.5px}
+.mrow .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.mrow .go{font-size:14px;font-weight:800;color:var(--faint);white-space:nowrap;padding-right:6px}
+
+.facts{display:grid;gap:22px}
+.fact .big{font-size:56px;color:#7B4FD9}
+.fact span{display:block;color:var(--muted);font-size:14.5px;margin-top:4px}
+@media (max-width:640px){
+  .mrow{grid-template-columns:1fr;gap:8px;padding:22px 0}
+  .mrow .no{font-size:56px}
+  .mrow .go{display:none}
+}
