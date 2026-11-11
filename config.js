@@ -1,5 +1,5 @@
 /* 部署 Google Apps Script 後，把 /exec 網址貼在這裡。 */
-const API_URL = "";
+const API_URL = "https://script.google.com/macros/s/AKfycbzvOdZbjX4cMzI6bx0j5DE-U-BB6W1OcH5xxkEO-N1I6Lv_lqVyuRGRa_4Y5sHJzRoV/exec";
 
 /* 遊戲開始前，動態區顯示的示範訊息（新的在上面） */
 const DEMO_FEED = [

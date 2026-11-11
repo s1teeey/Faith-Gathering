@@ -8,7 +8,7 @@
   const ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>';
   const opts=(k,cur,list)=>'<div class="opts" data-k="'+k+'">'+list.map(([v,t])=>'<button type="button" data-v="'+v+'" aria-pressed="'+(cur===v)+'"><span class="hl-all">'+t+'</span></button>').join("")+'</div>';
   const bar=document.createElement("header");bar.className="topbar";
-  bar.innerHTML='<div class="wrap'+(document.body.dataset.wide?' wide':'')+'"><a class="brand" href="index.html"><span>周遊列國</span>｜World Check-in</a>'+
+  bar.innerHTML='<div class="wrap'+(document.body.dataset.wide?' wide':'')+'"><a class="brand" href="index.html"><span>周遊列國</span>｜Nov_Faith</a>'+
     '<nav class="menu" aria-label="主選單">'+PAGES.map(([h,t])=>'<a href="'+h+'"'+(h===here||(here==="index.html"&&h==="index.html")?' aria-current="page"':"")+'>'+t+'</a>').join("")+'</nav>'+
     '<div class="prefs"><button class="prefs-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="顯示設定" title="顯示設定">'+ICON+'</button>'+
     '<div class="prefs-pop"><p class="grp">外觀</p>'+opts("theme",theme,[["","跟隨系統"],["light","淺色"],["dark","深色"]])+'</div></div></div>';
@@ -23,7 +23,7 @@
     bar.querySelectorAll('.opts[data-k="theme"] button').forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
   });
   const foot=document.createElement("footer");foot.className="foot";
-  foot.innerHTML='<div class="wrap'+(document.body.dataset.wide?' wide':'')+'"><span>分區聚會｜上半場</span><span>周遊列國 World Check-in</span></div>';
+  foot.innerHTML='<div class="wrap'+(document.body.dataset.wide?' wide':'')+'"><span>分區聚會｜上半場</span><span>周遊列國 Nov_Faith</span></div>';
   document.body.appendChild(foot);
   buildRail();buildIndex();
 })();

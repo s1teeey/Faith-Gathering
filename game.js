@@ -2,7 +2,7 @@
 const P = new URLSearchParams(location.search);
 const ADMIN = P.get("admin") || "";
 const SCREEN = P.get("view") === "screen";
-const FLAG = c => "assets/flags/" + c + ".png";
+const FLAG = c => "flags/" + c + ".png";
 const ORD = ["1st", "2nd", "3rd"];
 const DEMO_CELL = CELLS.findIndex(c => c.code === DEMO_CODE);
 
@@ -310,7 +310,7 @@ async function poll() {
   try { setState(await call("getState")); render(); } catch (e) {}
 }
 if (!API_URL) {
-  $("lede").innerHTML = '<span class="setup">尚未設定後端：請把 Apps Script 的 /exec 網址貼到 assets/config.js 的 API_URL。</span>';
+  $("lede").innerHTML = '<span class="setup">尚未設定後端：請把 Apps Script 的 /exec 網址貼到 config.js 的 API_URL。</span>';
 } else {
   setInterval(poll, 3000);
   setInterval(() => {
