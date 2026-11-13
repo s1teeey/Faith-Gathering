@@ -9,7 +9,7 @@
   document.body.prepend(top);
   const foot = document.createElement("footer");
   foot.className = "foot";
-  foot.innerHTML = '<div class="in"><span data-k="site.foot">Faith 區｜分區聚會</span></div>';
+  foot.innerHTML = '<div class="in"><span data-k="site.foot">Faith 區｜2026 下半年 分區聚會</span></div>';
   document.body.appendChild(foot);
   buildIndex(); buildRail(); loadContent();
 })();

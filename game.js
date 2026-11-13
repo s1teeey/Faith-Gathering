@@ -93,7 +93,7 @@ function renderBoard() {
       <div class="cap">${esc(c.name)}</div></div>`;
   });
   let mid;
-  if (S.status === "lobby") mid = '<div class="tlabel">尚未開始</div><div class="timer" style="font-size:max(7cqw,24px)">等待主持人</div>';
+  if (S.status === "lobby") mid = '<div class="tlabel">尚未開始</div><div class="timer" style="font-size:max(7cqw,24px)">等待關主</div>';
   else if (S.status === "ended") mid = '<div class="tlabel">最終結果</div><div class="timer" style="font-size:max(8cqw,28px)">時間到</div>';
   else mid = `<div class="tlabel">剩餘時間</div><div class="timer" id="timer">${fmt(remainingMs())}</div>`;
   mid += '<div class="rank">' + rk.map(x => `<div class="rk"><span class="pos">${x.label}</span><span class="who">${tname(x.i, x.t)}</span><span class="pt">${x.t.score}</span></div>`).join("") + "</div>";
@@ -113,7 +113,7 @@ function renderFeed() {
     `<div class="ev ${i === 0 ? "first" : ""}"><span class="dot" style="background:${col(l.team)}"></span><span class="msg">${esc(clean(l.msg))}</span><time>${hm(l.t)}</time></div>`).join("")
     || (S.status === "lobby"
       ? DEMO_FEED.map((m, i) => `<div class="ev ${i === 0 ? "first" : ""}"><span class="dot" style="background:var(--accent)"></span><span class="msg">${esc(m)}</span><span class="demo">示範</span></div>`).join("")
-        + '<div class="ev"><span class="dot"></span><span class="msg">等待主持人開始遊戲</span></div>'
+        + '<div class="ev"><span class="dot"></span><span class="msg">等待關主開始遊戲</span></div>'
       : '<div class="ev first"><span class="dot"></span><span class="msg">等待第一步</span></div>');
 }
 
@@ -149,7 +149,7 @@ function renderTeams() {
           <img class="preview" id="pv${i}" alt="">
           <button class="btn pri" id="sb${i}" disabled data-send="${i}">上傳並佔領</button></div>
         ${ADMIN ? `<div style="margin-top:8px"><button class="btn sm" data-skip="${i}">放棄這格</button></div>` : ""}</div>`;
-    } else st = '<div class="status idle">回本部找主持人擲骰</div>' + (ADMIN ? diceHTML(i) : "");
+    } else st = '<div class="status idle">回本部找關主擲骰</div>' + (ADMIN ? diceHTML(i) : "");
     $("tc" + i).innerHTML = `<div class="team">
       <div class="th"><h3>${tname(i, t)}</h3><span class="sc">${t.score}<small>分</small></span></div>
       <div class="meta">目前位置｜${esc(c.name)}　佔領｜${t.owned} 格</div>${st}</div>`;
@@ -161,7 +161,7 @@ function renderAdmin() {
   if (!ADMIN || SCREEN) return;
   $("admin-sec").hidden = false;
   if (!$("adminBox").firstChild) {
-    $("adminBox").innerHTML = `<div class="adm"><h3>主持人</h3>
+    $("adminBox").innerHTML = `<div class="adm"><h3>關主</h3>
       <div class="row"><input type="number" id="admMin" value="${DEFAULT_MINUTES}" min="1"> 分鐘
         <button class="btn pri" data-adm="start">開始遊戲</button></div>
       <div class="row">
