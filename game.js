@@ -156,23 +156,6 @@ function renderTeams() {
   });
 }
 
-// ===== 結束後揭曉 =====
-function renderReveal() {
-  const sig = S.status + JSON.stringify(S.cells);
-  if (sig === revealSig) return;
-  revealSig = sig;
-  const sec = $("reveal-sec");
-  if (S.status !== "ended" || !S.reveal) { sec.hidden = true; $("reveal").innerHTML = ""; return; }
-  sec.hidden = false;
-  const per = S.teams.map((t, i) => {
-    const mine = S.cells.map((c, k) => c && c.team === i ? k : -1).filter(k => k >= 0);
-    return `<h3>${tname(i, t)}（${t.score} 分）</h3><div class="items">${mine.map(k => `<span>${esc(S.reveal[k])} <small>← ${esc(CELLS[k].name)}</small></span>`).join("") || '<span class="muted">空手</span>'}</div>`;
-  }).join("");
-  const all = CELLS.map((c, i) => `<div><img src="${FLAG(c.code)}" alt=""><span>${esc(c.name)} → <b>${esc(S.reveal[i])}</b></span></div>`).join("");
-  $("reveal").innerHTML = `<div class="reveal"><p class="muted">每個國家背後都對應一種食材；未被佔領的留在公共食材區。</p>${per}
-    <details><summary><b>20 國完整對照</b></summary><div class="all">${all}</div></details></div>`;
-}
-
 // ===== 主持人控制台 =====
 function renderAdmin() {
   if (!ADMIN || SCREEN) return;
@@ -208,7 +191,7 @@ function renderAdmin() {
 
 function render() {
   if (!S) return;
-  renderLede(); renderFeed(); renderBoard(); renderTeams(); renderReveal(); renderAdmin();
+  renderLede(); renderFeed(); renderBoard(); renderTeams(); renderAdmin();
   loadPhotos();
 }
 
