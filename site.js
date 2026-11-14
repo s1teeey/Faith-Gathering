@@ -29,7 +29,7 @@ function applyContent(map) {
   document.querySelectorAll("[data-pin]").forEach(el => { el.hidden = /^(否|no|n|關|0|false)$/i.test(String(pin || "").trim()); });
   document.querySelectorAll("[data-plan]").forEach(el => {
     const u = String(map["_plan." + el.dataset.plan] || "").trim();
-    if (/^https?:\/\//.test(u)) { el.href = u; el.hidden = false; } else el.hidden = true;
+    if (/^https?:\/\//.test(u)) { el.href = u; el.hidden = false; }
   });
   window.dispatchEvent(new Event("content"));
 }
